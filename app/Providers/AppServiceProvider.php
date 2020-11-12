@@ -9,6 +9,8 @@ use App\Repositories\Role\RoleRepositoryInterface;
 use App\Repositories\Role\RoleRepository;
 use App\Repositories\Course\CourseRepositoryInterface;
 use App\Repositories\Course\CourseRepository;
+use App\Repositories\Group\GroupRepositoryInterface;
+use App\Repositories\Group\GroupRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -38,6 +40,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             UserRepositoryInterface::class,
             UserRepository::class,
+        );
+        $this->app->singleton(
+            GroupRepositoryInterface::class,
+            GroupRepository::class,
         );
     }
 

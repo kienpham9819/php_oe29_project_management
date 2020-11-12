@@ -13,4 +13,10 @@ interface UserRepositoryInterface
     public function updateUser($user, $data, $roles);
 
     public function import($request);
+
+    public function hasRole($roleName);
+
+    public function getUsersNoGroup($userIds, $groupIds);
+
+    public function getUsersToAddGroup($userIds);
 }

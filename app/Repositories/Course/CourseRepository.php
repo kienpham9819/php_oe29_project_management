@@ -20,4 +20,14 @@ class CourseRepository extends BaseRepository implements CourseRepositoryInterfa
 
         return $courses;
     }
+
+    public function getGroupIds($group)
+    {
+        return Course::findOrFail($group->course_id)->groups()->pluck('groups.id');
+    }
+
+    public function getUserIds($group)
+    {
+        return Course::findOrFail($group->course_id)->users()->pluck('users.id');
+    }
 }
